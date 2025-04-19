@@ -7,8 +7,9 @@ void main() {
 }
 
 class MyApp11_1 extends StatelessWidget {
-  const MyApp11_1({Key? key}) : super(key: key);
+  const MyApp11_1({super.key});
 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ABP Minggu 11',
@@ -20,7 +21,7 @@ class MyApp11_1 extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
   final String title;
 
   @override

@@ -6,7 +6,7 @@ void main() {
 }
 
 class MyApp11_2 extends StatelessWidget {
-  const MyApp11_2({Key? key}) : super(key: key);
+  const MyApp11_2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class MyApp11_2 extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({super.key, required this.title});
   final String title;
 
   @override
@@ -49,10 +49,11 @@ class _MyHomePageState extends State<MyHomePage> {
   List<DropdownMenuItem<String>> dd_items = [];
   var col_selested;
 
+  @override
   void initState() {
     super.initState();
     for (String col in colors) {
-      dd_items.add(DropdownMenuItem(child: Text(col), value: col));
+      dd_items.add(DropdownMenuItem(value: col, child: Text(col)));
     }
   }
 
@@ -199,9 +200,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             ElevatedButton(
                               child: Text('Save'),
                               onPressed: () {
-                                if (col_selested == 'blue')
+                                if (col_selested == 'blue') {
                                   col_selested = Colors.blue;
-                                else if (col_selested == 'green')
+                                } else if (col_selested == 'green')
                                   col_selested = Colors.green;
                                 else if (col_selested == 'yellow')
                                   col_selested = Colors.yellow;
