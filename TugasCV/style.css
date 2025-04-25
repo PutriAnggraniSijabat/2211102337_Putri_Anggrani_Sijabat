@@ -1,0 +1,123 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ffffff;
+    color: #222;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.cv-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 26px;
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 18px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 4px;
+    margin-top: 40px;
+}
+
+.entry {
+    margin-bottom: 25px;
+}
+
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.entry .title {
+    font-weight: bold;
+    font-size: 15px;
+    max-width: 70%;
+}
+
+.entry .title em {
+    font-weight: normal;
+    display: block;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.meta {
+    text-align: right;
+    font-size: 13px;
+    color: #555;
+    min-width: 140px;
+}
+
+ul {
+    padding-left: 18px;
+    margin: 0;
+}
+
+ul li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* CERTIFICATION */
+.entry.cert {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.cert-left {
+    width: 80%;
+}
+
+.cert-left ul {
+    margin: 4px 0 0 18px;
+    padding: 0;
+}
+
+.cert-left li {
+    font-size: 14px;
+}
+
+/* SKILLS */
+.skills {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding-left: 0;
+}
+
+.skills ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    min-width: 180px;
+    margin: 0 20px 10px 0;
+}
+
+.skills li {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
