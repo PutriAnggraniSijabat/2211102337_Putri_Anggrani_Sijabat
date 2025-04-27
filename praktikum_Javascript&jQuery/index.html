@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JavaScript dan jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+    <h1 id="judul">Judul Awal</h1>
+    <p class="paragraf">Ini paragraf pertama.</p>
+
+    <button id="tombol">Klik Saya</button>
+
+    <div id="kotak" style="width:100px;height:100px;background-color:red;margin-top:10px;"></div>
+
+    <button id="toggleButton">Toggle Panel</button>
+    <div id="panel" style="display:none;background-color:lightblue;padding:10px;margin-top:10px;">Ini panel yang bisa
+        toggle.</div>
+
+    <button id="fadeButton">Fade Box</button>
+    <div id="box" style="width:100px;height:100px;background-color:green;margin-top:10px;"></div>
+
+    <script>
+        // JavaScript Dasar
+        var nama = "Febrilia"; // Global scope
+        let umur = 21;         // Block scope
+        const kota = "Purwokerto";
+
+        if (umur > 18) {
+            console.log("Dewasa");
+        } else {
+            console.log("Anak-anak");
+        }
+
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+
+        let j = 0;
+        while (j < 5) {
+            console.log(j);
+            j++;
+        }
+
+        function sapa(nama) {
+            return "Halo, " + nama;
+        }
+
+        console.log(sapa("Febrilia"));
+
+        const mahasiswa = {
+            nama: "Febrilia",
+            umur: 21,
+            sapa: function () {
+                return "Halo, saya " + this.nama;
+            }
+        };
+
+        console.log(mahasiswa.sapa());
+
+        // jQuery
+        $(document).ready(function () {
+            $("#judul").text("Belajar jQuery");
+            $(".paragraf").css("color", "blue");
+
+            $("#tombol").click(function () {
+                alert("Tombol diklik!");
+            });
+
+            $("#kotak").fadeOut(1000).fadeIn(1000);
+
+            $("#toggleButton").click(function () {
+                $("#panel").slideToggle();
+            });
+
+            $("#fadeButton").click(function () {
+                $("#box").fadeToggle();
+            });
+
+            $.get("https://jsonplaceholder.typicode.com/posts", function (data) {
+                console.log("Data dari $.get:", data);
+            });
+
+            async function getData() {
+                let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+                let data = await response.json();
+                console.log("Data dari fetch GET:", data);
+            }
+
+            getData();
+
+            async function kirimData() {
+                let response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        title: "Belajar JavaScript",
+                        body: "Ini contoh pengiriman data",
+                        userId: 1
+                    })
+                });
+
+                let data = await response.json();
+                console.log("Data dari fetch POST:", data);
+            }
+
+            kirimData();
+        });
+    </script>
+
+</body>
+
+</html>
